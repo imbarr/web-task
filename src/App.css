@@ -1,0 +1,136 @@
+/*============================= Header =============================*/
+header {
+  border-bottom: solid 2px darkgrey;
+  padding-bottom: 30px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-gap: 20px;
+}
+
+#avatar {
+  max-width: 300px;
+  width: 100%;
+}
+
+
+
+
+
+/*============================= Tabs ===============================*/
+.tabs > input {
+  display: none;
+}
+
+.tabs > label {
+  display: inline-block;
+}
+
+.tabs > input:not(:checked) + label {
+  cursor: pointer;
+}
+
+.tab-content {
+  width: 100%;
+}
+
+.tab-content > * {
+  display: none;
+}
+
+.content-1, .content-2 {
+  width: 100%;
+  padding: 20px 0 20px;
+}
+
+.tab-1:checked ~ .tab-content > .content-1,
+.tab-2:checked ~ .tab-content > .content-2 {
+  display: block;
+}
+
+
+
+
+
+/*============================= Payment ============================*/
+#payment {
+  border-bottom: solid 2px darkgrey;
+  margin-top: 15px;
+  border-bottom: solid darkgrey 2px;
+}
+
+#payment > label {
+  font-size: x-large;
+  color: blue;
+}
+
+#payment > label {
+  padding: 10px;
+}
+
+#payment > label:first-of-type {
+  padding-left: 0;
+}
+
+#payment > input:checked + label {
+  color: black;
+}
+
+.labels {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: max-content auto;
+}
+
+.labels > input, .labels > select {
+  max-width: 175px;
+}
+
+.labels + button {
+  margin-top: 20px;
+}
+
+
+
+
+
+/*============================= Bank ===============================*/
+#bank > label {
+  padding: 5px;
+  background-color: lightgrey;
+  height: auto;
+  color: blue;
+}
+
+#bank > label > img {
+  height: 20px;
+}
+
+#bank > input:checked + label {
+  color: black;
+  background-color: white;
+}
+
+#credit-card:checked + label > img {
+  content:url("../src/icons/credit-card-black.svg");
+}
+
+#internet-bank:checked + label > img {
+  content:url("../src/icons/bank-black.svg");
+}
+
+
+
+
+
+/*============================= Media ==============================*/
+@media (max-width: 767px) {
+  header {
+    grid-template-columns: none;
+  }
+}
+
+@media (max-width: 350px) {
+  .labels {
+    grid-template-columns: none;
+  }
+}

@@ -1,0 +1,32 @@
+#about > h2 {
+  margin: 35px 0 20px;
+}
+
+#about .gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 20px;
+}
+
+#about .gallery-item {
+  border: solid lightgrey 2px;
+  padding: 10px;
+}
+
+#about .gallery-item > img {
+  width: 100%;
+}
+
+#about .gallery-item > .name {
+  font-weight: bold;
+}
+
+#about .gallery-item > .price {
+  color: grey;
+}
+
+@media (max-width: 350px) {
+  .gallery {
+    grid-template-columns: none;
+  }
+}

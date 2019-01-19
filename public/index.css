@@ -1,0 +1,81 @@
+/*============================= Global =============================*/
+body {
+  margin: 40px;
+  border: solid darkgrey 2px;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: larger;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: large;
+}
+
+a {
+  text-decoration: none;
+}
+
+input:valid {
+  background-color: rgba(0, 255, 0, 0.2);
+}
+
+input:invalid:not(:placeholder-shown),
+input:invalid:focus {
+  background-color: rgba(255, 0, 0, 0.2);
+}
+
+input:placeholder-shown {
+  background-color: transparent;
+}
+
+input {
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  padding-left: 8px;
+  border-bottom: solid grey 1px;
+  outline: none;
+}
+
+select {
+  border-bottom: solid grey 1px;
+  padding-left: 5px;
+  color: grey;
+}
+
+button {
+  padding: 4px;
+  display: block;
+}
+
+form:valid button {
+  color: black;
+  border: solid black 2px;
+  cursor: pointer;
+}
+
+form:invalid button {
+  pointer-events: none;
+  color: grey;
+  border: solid grey 2px;
+}
+
+
+
+
+
+/*============================= Media ==============================*/
+@media (max-width: 767px) {
+  body {
+    border: none;
+    margin: 0;
+  }
+}

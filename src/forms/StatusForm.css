@@ -1,0 +1,10 @@
+.status-form > .hidden {
+  display: none;
+}
+
+.status-form > .status > button {
+  color: black;
+  border: solid black 2px;
+  cursor: pointer;
+  margin-top: 20px;
+}

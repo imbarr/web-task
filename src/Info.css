@@ -1,0 +1,13 @@
+#info {
+  margin-bottom: 20px;
+}
+
+#info > button {
+  border: none;
+  background-color: transparent;
+  color: blue;
+  outline: none;
+  padding: 0;
+  font-size: inherit;
+  cursor: pointer;
+}

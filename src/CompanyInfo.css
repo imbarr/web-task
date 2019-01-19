@@ -1,0 +1,26 @@
+h1 {
+  margin: 0 0 20px;
+  font-weight: bold;
+  font-size: larger;
+}
+
+#telephone, #website, #mail {
+  margin: 7px 10px 0 0;
+  display: inline-block;
+}
+
+#company-info {
+  margin-top: 10px;
+}
+
+#requisites {
+  margin-top: 20px;
+}
+
+#telephone {
+  color: darkgray;
+}
+
+#company-info, #requisites {
+  display: block;
+}

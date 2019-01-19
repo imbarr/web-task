@@ -1,0 +1,49 @@
+#credit-card-content {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-column-gap: 50px;
+  grid-row-gap: 20px;
+}
+
+#card-info {
+  max-width: 315px;
+  width: 100%;
+  background-color: lightgrey;
+  border-radius: 10px;
+  box-shadow: 5px 10px 10px 0 grey, -5px 10px 10px 0 grey;
+  margin-bottom: 20px;
+  white-space: normal;
+}
+
+#card-info > div {
+  margin: 15px;
+  overflow: hidden;
+}
+
+.credit-card-logo {
+  height: 30px;
+  width: 40px;
+  float: right;
+  margin-left: 10px;
+}
+
+#card-number {
+  width: 100%;
+  margin-top: 40px;
+}
+
+#card-expiration {
+  width: 80px;
+  margin: 30px 30px 0 0;
+}
+
+#card-cvc {
+  margin: 30px 0 30px;
+  width: 60px;
+}
+
+@media (max-width: 767px) {
+  #credit-card-content {
+    grid-template-columns: none;
+  }
+}
