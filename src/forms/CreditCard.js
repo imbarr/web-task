@@ -19,19 +19,19 @@ class CreditCard extends StatusForm {
           <Input id="card-number" placeholder="Номер карты"
                  check={v => /^[0-9]{0,16}$/.test(v)}
                  display={v => v.replace(/(.{4})/g,"$1 ")}
-                 isValid={v => /^[0-9]{16}$/.test(v)}/>
+                 isValid={v => /^[0-9]{16}$/.test(v)} name="cardNumber"/>
           <Input check={v => /^(([0-9]|0[0-9]|1[0-2])(\/([1-9][0-9]?)?)?)?$/.test(v)}
                  isValid={v => /^([0-9]|0[0-9]|1[0-2])\/[1-9][0-9]$/.test(v)}
-                 id="card-expiration" placeholder="ММ/ГГ"/>
+                 id="card-expiration" placeholder="ММ/ГГ" name="expirationDate"/>
           <Input check={v => /^[0-9]{1,3}$/.test(v)}
                  isValid={v => /^[0-9]{3}$/.test(v)}
-                 id="card-cvc" placeholder="CVC"/>
+                 id="card-cvc" placeholder="CVC" name="CVC"/>
         </div>
       </div>
       <div id="other-info">
         <div className="labels">
           <label htmlFor="money-amount">Сумма</label>
-          <Input required id="money-amount" placeholder="от 1 000 до 75 000 ₽"
+          <Input required placeholder="от 1 000 до 75 000 ₽" name="money"
                  check={(v) => /^[0-9]{0,5}$/.test(v)}
                  isValid={(v) => CreditCard.range(parseInt(v), 1000, 75000)}
                  display={(v) =>
@@ -39,11 +39,11 @@ class CreditCard extends StatusForm {
                      ? v.substring(0, v.length-3) + " " + v.substring(v.length-3, v.length) + " ₽"
                      : v + " ₽")}/>
           <label htmlFor="comment">Комментарий</label>
-          <input pattern=".{0,150}" type="text" id="comment" placeholder="до 150 символов"/>
+          <input pattern=".{0,150}" type="text" placeholder="до 150 символов" name="comment"/>
           <label htmlFor="input-mail">Ваша эл.почта</label>
-          <input required type="email" id="input-mail" placeholder="для квитанций об оплате"/>
+          <input required type="email" placeholder="для квитанций об оплате" name="email"/>
         </div>
-        <button type="submit" id="submit-credit-card">Заплатить</button>
+        <button type="submit">Заплатить</button>
       </div>
     </form>
   );

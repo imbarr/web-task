@@ -11,14 +11,14 @@ class Ask extends StatusForm {
         <label htmlFor="account-number">Номер счета</label>
         <Input check={v => /^[0-9]{0,20}$/.test(v)}
                isValid={v => /^[0-9]{20}$/.test(v)}
-               id="account-number" placeholder="20 цифр"/>
+               placeholder="20 цифр" name="accountNumber"/>
         <label htmlFor="telephone-number">Номер телефона</label>
         <Input check={v => /^[0-9]{0,11}$/.test(v)}
                isValid={v => /^[0-9]{11}$/.test(v)}
-               id="telephone-number"
+               name="telephone"
                placeholder="88005553535"/>
       </div>
-      <button type="submit" id="submit-ask">Создать платеж</button>
+      <button type="submit">Создать платеж</button>
     </form>
   )
 }
