@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="index.css" type="text/css">
+  <meta name="theme-color" content="#000000">
+  <!--
+    manifest.json provides metadata used when your web app is added to the
+    homescreen on Android. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    <link rel="manifest" href="manifest.json">
+  -->
+  <title>ЗАО "Bob Ross"</title>
+</head>
+<body>
+  <header>
+    <div id="header-wrapper">
+      <h1>Закрытое акционерное общество "The Joy of Painting with Bob Ross"</h1>
+      <a id="telephone">1-800-262-7677</a>
+      <a target="_blank" id="website" href="https://www.bobross.com/">www.bobross.com</a>
+      <a target="_blank" id="mail" href="mailto:info@bobross.com">info@bobross.com</a>
+      <a target="_blank" id="company-info"
+         href="https://www.bobross.com/terms.asp">
+        Информация о компании
+      </a>
+      <a target="_blank" id="requisites"
+         href="https://www.bobross.com/pindex.asp">
+        Показать реквизиты
+      </a>
+    </div><!--
+    --><img id="avatar" src="avatar.jpg" alt="Изображение не найдено">
+  </header>
+  <main>
+    <div id="payment" class="tabs">
+      <input type="radio" name="tabs-level-1" class="tab-1" id="bank-tab" checked>
+      <label for="bank-tab">Заплатить</label>
+      <input type="radio" name="tabs-level-1" class="tab-2" id="ask-tab">
+      <label for="ask-tab">Запросить платеж</label>
+      <div class="tab-content">
+        <div id="bank" class="tabs content-1">
+          <input type="radio" name="tabs-level-2" id="credit-card" class="tab-1" checked>
+          <label for="credit-card">
+            <img src="icons/credit-card-blue.svg">
+            С карты любого банка
+          </label>
+          <input type="radio" name="tabs-level-2" id="internet-bank" class="tab-2">
+          <label for="internet-bank">
+            <img src="icons/bank-blue.svg">
+            Из своего интернет-банка
+          </label>
+          <div class="tab-content">
+            <div class="content-1">
+              <form id="credit-card-content">
+                <div id="card-info">
+                  <div>
+                    <img class="credit-card-logo" src="logos/visa.svg">
+                    <img class="credit-card-logo"
+                         src="logos/mastercard.svg">
+                    <img class="credit-card-logo" src="logos/maestro.svg">
+                    <input required pattern="[0-9]{16}" type="text"
+                           id="card-number" placeholder="Номер карты">
+                    <input required
+                           pattern="([0-9]|0[0-9]|1[0-2])/[1-9][0-9]"
+                           type="text" id="card-expiration"
+                           placeholder="ММ/ГГ">
+                    <input required pattern="[0-9]{3}"
+                           type="text" id="card-cvc" placeholder="CVC">
+                  </div>
+                </div>
+                <div id="other-info">
+                  <div class="labels">
+                    <label for="money-amount">Сумма</label>
+                    <input required type="text" id="money-amount"
+                           placeholder="от 1 000 до 75 000 ₽">
+                    <label for="comment">Комментарий</label>
+                    <input pattern=".{0,150}" type="text" id="comment"
+                           placeholder="до 150 символов">
+                    <label for="input-mail">Ваша эл.почта</label>
+                    <input required type="email" id="input-mail"
+                           placeholder="для квитанций об оплате">
+                  </div>
+                  <button type="submit" id="submit-credit-card">
+                    Заплатить
+                  </button>
+                </div>
+              </form>
+            </div>
+            <form class="content-2" id="internet-bank-content">
+              <div class="labels">
+                <label for="tax-id">От кого (ИНН)</label>
+                <input required pattern="[0-9]{10}|[0-9]{12}" type="text"
+                       id="tax-id" placeholder="10 или 12 цифр">
+                <label for="bic">БИК</label>
+                <input required pattern="[0-9]{9}" type="text"
+                       id="bic" placeholder="9 цифр">
+                <label for="vat">НДС</label>
+                <select id="vat" required>
+                  <option value="" disabled selected hidden>
+                    Выберите один из вариантов
+                  </option>
+                  <option>НДС 18%</option>
+                  <option>НДС 10%</option>
+                  <option>без НДС</option>
+                </select>
+              </div>
+              <button type="submit" id="submit-internet-bank">
+                Получить файл для интернет-банка
+              </button>
+            </form>
+          </div>
+        </div>
+        <form id="ask" class="content-2">
+          <div class="labels">
+            <label for="account-number">Номер счета</label>
+            <input required pattern="[0-9]{20}" type="text"
+                   id="account-number" placeholder="20 цифр">
+            <label for="telephone-number">Номер телефона</label>
+            <input required pattern="[0-9]{11}" type="text" id="telephone-number"
+                   placeholder="88005553535">
+          </div>
+          <button type="submit" id="submit-ask">Создать платеж</button>
+        </form>
+      </div>
+    </div>
+    <div id="about">
+      <h2>О компании закрытое акционерное общество "The Joy of Painting with Bob Ross"</h2>
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="gallery/blue%20moon.png" alt="Изображение не найдено">
+          <p class="name">Blue Moon</p>
+          <p class="price">5 000 ₽</p>
+        </div><!--
+        --><div class="gallery-item">
+          <img src="gallery/forest%20down.png" alt="Изображение не найдено">
+          <p class="name">Forest Down</p>
+          <p class="price">300 $</p>
+        </div><!--
+        --><div class="gallery-item">
+            <img src="gallery/golden%20glow.png" alt="Изображение не найдено">
+            <p class="name">Golden Glow</p>
+            <p class="price">200 €</p>
+        </div><!--
+        --><div class="gallery-item">
+            <img src="gallery/mountain%20retreat.png" alt="Изображение не найдено">
+            <p class="name">Mountain Retreat</p>
+            <p class="price">10 000 ₽</p>
+        </div><!--
+        --><div class="gallery-item">
+            <img src="gallery/winter%20sun.png" alt="Изображение не найдено">
+            <p class="name">Winter Sun</p>
+            <p class="price">300 $</p>
+        </div>
+      </div>
+    </div>
+    <div id="info">
+      <input type="radio" id="show" name="text">
+      <input type="radio" id="hide" name="text" checked>
+      <p class="short">
+        During his 20-year tenure with the U.S. Air Force, Ross developed a taste for painting after attending an art class at the Anchorage U.S.O. club. He found himself frequently at odds with many of his painting instructors, who were more int...
+      </p>
+      <div class="full">
+        <p>During his 20-year tenure with the U.S. Air Force, Ross developed a taste for painting after attending an art class at the Anchorage U.S.O. club. He found himself frequently at odds with many of his painting instructors, who were more interested in abstract painting. In Ross' own words: "They'd tell you what makes a tree, but they wouldn't tell you how to paint a tree."</p>
+        <p>Ross was working as a part-time bartender when he discovered a TV show called The Magic of Oil Painting, hosted by German painter Bill Alexander. Alexander touted a 16th-century style of painting called "alla prima" (Italian for "first attempt"), better known as "wet-on-wet", that allowed him to finish a painting in a little under 30 minutes. Ross studied and became quite good at alla prima through Alexander's show, and began selling Alaskan landscapes painted on the inside of novelty gold pans. When Ross began making more money from selling the gold pans than his military job, he retired from the Air Force in 1981 after 20 years of service, having the rank of Master Sergeant.</p>
+        <p>He first went to Florida and studied painting under Alexander, then joined the "Alexander Magic Art Supplies Company" and became a traveling salesman and tutor. Annette Kowalski, who had attended one of his sessions, became convinced that there was a great opportunity for Ross to succeed on his own, and persuaded him to do so. She invested her life savings in the company, as did Ross and his wife. The business struggled at first; his permed hairstyle came about as a cost-cutting measure, when his regular crewcut haircuts became too expensive. Ross grew increasingly uncomfortable with the style in his later years, but kept it throughout his career.</p>
+        <p>The origins of the TV show, The Joy of Painting, are unclear. It was filmed at the studio of the PBS station WIPB in Muncie, Indiana.</p>
+        <p>The show ran from January 11, 1983 to May 17, 1994, but reruns still continue to appear in many broadcast areas and countries, including the non-commercial digital subchannel network Create. During each half-hour segment, Ross would instruct viewers in oil painting using a quick-study technique from the imagination that used a limited palette of paints and broke down the process into simple steps. Art critic Mira Schor compared him to Fred Rogers, host of Mister Rogers' Neighborhood, noting that Ross' soft voice and the slow pace of his speech were similar.</p>
+        <p>With help from Annette Kowalski, Ross built a $15 million business, Bob Ross Inc., selling his line of art supplies and how-to books, and marketing painting classes taught by instructors trained in the "Bob Ross method". All of his income, he said, was derived from those sources; the show was intended to be a vehicle to promote his classes and products. All of his paintings, including those created during his shows, were donated to PBS stations.</p>
+        <p>Ross also filmed wildlife, squirrels in particular, usually in his garden, and he would often take in injured or abandoned squirrels and other animals. Small animals often appeared on his Joy of Painting canvasses.</p>
+      </div>
+      <label for="show" id="show-label">Показать всё</label>
+      <label for="hide" id="hide-label">Скрыть</label>
+    </div>
+  </main>
+  <footer>
+    <a target="_blank"
+       href="https://twitter.com/intent/tweet?text=Great+streamer.+Never+reads+chat+though.&amp;url=https%3A%2F%2Fwww.twitch.tv%2Fbobross">
+      <img src="logos/twitter.svg">
+      Твитнуть
+    </a>
+    <a target="_blank"
+       href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.twitch.tv%2Fbobross&amp;src=sdkpreparse">
+      <img src="logos/facebook.svg">
+      Поделиться
+    </a>
+    <a target="_blank" href="https://google.com">
+      <img src="logos/google.svg">
+    </a>
+    <a target="_blank" href="https://vk.com">
+      <img src="logos/vkontakte.svg">
+    </a>
+    <a target="_blank" href="https://ok.ru">
+      <img src="logos/odnoklassniki.svg">
+    </a>
+    <a target="_blank" href="https://www.linkedin.com">
+      <img src="logos/linkedin.svg">
+    </a>
+  </footer>
+</body>
+</html>
