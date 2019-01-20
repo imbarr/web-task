@@ -55,7 +55,14 @@ class StatusForm extends Component {
 
   handleSubmit(event) {
     this.setState({status: Status.pending});
-    axios.post(config.serverURI + this.path).then(
+    let json = {};
+    let data = new FormData(event.target);
+
+    for (const [key, value]  of data.entries()) {
+      json[key] = value;
+    }
+
+    axios.post(config.serverURI + this.path, JSON.stringify(json)).then(
       response =>
         this.setState({status: Math.floor(response.status / 100) === 2 ? Status.success : Status.failed}),
       () => {

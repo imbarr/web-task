@@ -29,7 +29,7 @@ export function VAT() {
 }
 
 export function Telephone() {
-  return <input pattern="\+7[0-9]{11}" name="telephone" placeholder="+7 800 555 35 35"/>
+  return <input pattern="\+7[0-9]{10}" name="telephone" placeholder="+7 800 555 35 35"/>
 }
 
 export function Mail(props) {
