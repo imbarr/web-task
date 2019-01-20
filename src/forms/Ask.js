@@ -1,6 +1,5 @@
 import React from "react"
 import StatusForm from "./StatusForm";
-import Input from "./Input"
 
 class Ask extends StatusForm {
   path = '/ask';
@@ -9,14 +8,12 @@ class Ask extends StatusForm {
     <form id="ask" className="content-2">
       <div className="labels">
         <label htmlFor="account-number">Номер счета</label>
-        <Input check={v => /^[0-9]{0,20}$/.test(v)}
-               isValid={v => /^[0-9]{20}$/.test(v)}
+        <input pattern="[0-9]{20}"
                placeholder="20 цифр" name="accountNumber"/>
         <label htmlFor="telephone-number">Номер телефона</label>
-        <Input check={v => /^[0-9]{0,11}$/.test(v)}
-               isValid={v => /^[0-9]{11}$/.test(v)}
+        <input pattern="\+7[0-9]{11}"
                name="telephone"
-               placeholder="88005553535"/>
+               placeholder="+7 800 555 35 35"/>
       </div>
       <button type="submit">Создать платеж</button>
     </form>

@@ -1,6 +1,5 @@
 import React from "react"
 import StatusForm from "./StatusForm";
-import Input from "./Input"
 import visa from "../logos/visa.svg"
 import mastercard from "../logos/mastercard.svg"
 import maestro from "../logos/maestro.svg"
@@ -16,32 +15,24 @@ class CreditCard extends StatusForm {
           <img alt="" className="credit-card-logo" src={visa}/>
           <img alt="" className="credit-card-logo" src={mastercard}/>
           <img alt="" className="credit-card-logo" src={maestro}/>
-          <Input id="card-number" placeholder="Номер карты"
-                 check={v => /^[0-9]{0,16}$/.test(v)}
-                 display={v => v.replace(/(.{4})/g,"$1 ")}
-                 isValid={v => /^[0-9]{16}$/.test(v)} name="cardNumber"/>
-          <Input check={v => /^(([0-9]|0[0-9]|1[0-2])(\/([1-9][0-9]?)?)?)?$/.test(v)}
-                 isValid={v => /^([0-9]|0[0-9]|1[0-2])\/[1-9][0-9]$/.test(v)}
+          <input required id="card-number" placeholder="Номер карты"
+                 pattern="[0-9]{16}" name="cardNumber"/>
+          <input required pattern="([0-9]|0[0-9]|1[0-2])\/[1-9][0-9]"
                  id="card-expiration" placeholder="ММ/ГГ" name="expirationDate"/>
-          <Input check={v => /^[0-9]{1,3}$/.test(v)}
-                 isValid={v => /^[0-9]{3}$/.test(v)}
+          <input required pattern="[0-9]{3}"
                  id="card-cvc" placeholder="CVC" name="CVC"/>
         </div>
       </div>
       <div id="other-info">
         <div className="labels">
           <label htmlFor="money-amount">Сумма</label>
-          <Input required placeholder="от 1 000 до 75 000 ₽" name="money"
-                 check={(v) => /^[0-9]{0,5}$/.test(v)}
-                 isValid={(v) => CreditCard.range(parseInt(v), 1000, 75000)}
-                 display={(v) =>
-                   (v.length > 3
-                     ? v.substring(0, v.length-3) + " " + v.substring(v.length-3, v.length) + " ₽"
-                     : v + " ₽")}/>
+          <input required placeholder="от 1 000 до 75 000 ₽" name="money"
+                 pattern="([1-8][0-9]{3}|9[0-8][0-9]{2}|99[0-8][0-9]|999[0-9]|[1-6][0-9]{4}|7[0-4][0-9]{3}|75000)"/>
           <label htmlFor="comment">Комментарий</label>
-          <input pattern=".{0,150}" type="text" placeholder="до 150 символов" name="comment"/>
+          <input pattern=".{0-150}" placeholder="до 150 символов" name="comment"/>
           <label htmlFor="input-mail">Ваша эл.почта</label>
-          <input required type="email" placeholder="для квитанций об оплате" name="email"/>
+          <input required pattern="[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+"
+                 placeholder="для квитанций об оплате" name="email"/>
         </div>
         <button type="submit">Заплатить</button>
       </div>
