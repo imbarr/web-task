@@ -4,6 +4,7 @@ import visa from "../logos/visa.svg"
 import mastercard from "../logos/mastercard.svg"
 import maestro from "../logos/maestro.svg"
 import "./CreditCard.css"
+import {Mail, Money} from "./Inputs";
 
 class CreditCard extends StatusForm {
   path = '/credit-card';
@@ -25,14 +26,12 @@ class CreditCard extends StatusForm {
       </div>
       <div id="other-info">
         <div className="labels">
-          <label htmlFor="money-amount">Сумма</label>
-          <input required placeholder="от 1 000 до 75 000 ₽" name="money"
-                 pattern="([1-8][0-9]{3}|9[0-8][0-9]{2}|99[0-8][0-9]|999[0-9]|[1-6][0-9]{4}|7[0-4][0-9]{3}|75000)"/>
-          <label htmlFor="comment">Комментарий</label>
-          <input pattern=".{0-150}" placeholder="до 150 символов" name="comment"/>
-          <label htmlFor="input-mail">Ваша эл.почта</label>
-          <input required pattern="[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+"
-                 placeholder="для квитанций об оплате" name="email"/>
+          <label htmlFor="card__money">Сумма</label>
+          <Money id="card__money"/>
+          <label htmlFor="card__comment">Комментарий</label>
+          <input id="card__comment" pattern=".{0-150}" placeholder="до 150 символов" name="comment"/>
+          <label htmlFor="card__mail">Ваша эл.почта</label>
+          <Mail id="card__mail" placeholder="для квитанций об оплате"/>
         </div>
         <button type="submit">Заплатить</button>
       </div>

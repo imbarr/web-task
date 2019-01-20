@@ -1,5 +1,6 @@
 import React from "react"
 import StatusForm from "./StatusForm";
+import {AccountNumber, BIC, Money, TaxId, VAT} from "./Inputs";
 
 class InternetBank extends StatusForm {
   path = '/internet-bank';
@@ -7,19 +8,16 @@ class InternetBank extends StatusForm {
   form = (
     <form id="internet-bank-content">
       <div className="labels">
-        <label htmlFor="tax-id">От кого (ИНН)</label>
-        <input required pattern="([0-9]{10}|[0-9]{12})"
-               placeholder="10 или 12 цифр" name="taxId"/>
-        <label htmlFor="bic">БИК</label>
-        <input pattern="[0-9]{9}"
-               placeholder="9 цифр" name="BIC"/>
-        <label htmlFor="vat">НДС</label>
-        <select name="VAT" required>
-          <option value="" disabled selected hidden>Выберите один из вариантов</option>
-          <option value="18%">НДС 18%</option>
-          <option value="10%">НДС 10%</option>
-          <option value="None">без НДС</option>
-        </select>
+        <label htmlFor="bank__tax-id">От кого (ИНН)</label>
+        <TaxId id="bank__tax-id"/>
+        <label htmlFor="bank__bic">БИК</label>
+        <BIC id="bank__bic"/>
+        <label htmlFor="bank__account">Номер счёта</label>
+        <AccountNumber id="bank__account"/>
+        <label htmlFor="bank__vat">НДС</label>
+        <VAT id="bank__vat"/>
+        <label htmlFor="bank__money">Сколько</label>
+        <Money id="bank__money"/>
       </div>
       <button type="submit">
         Получить файл для интернет-банка
