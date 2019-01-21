@@ -15,3 +15,5 @@
 3) npm run start
 
 [**Ссылка на бэкенд**](https://github.com/imbarr/web-project-backend)
+
+[**Ссылка на админ-панель**](https://github.com/imbarr/web-project-admin-panel)
