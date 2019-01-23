@@ -1,12 +1,20 @@
 import React from "react"
-import StatusForm from "./StatusForm";
 import {AccountNumber, BIC, Money, TaxId, VAT} from "./Inputs";
+import { stringify } from 'query-string';
+import config from "../Config"
 
-class InternetBank extends StatusForm {
-  path = '/internet-bank';
+let handleSubmit = (event) => {
+  let data = new FormData(event.target);
+  let obj = {};
+  for (const [key, value]  of data.entries()) {
+    obj[key] = value;
+  }
+  window.open(config.serverURI + "/payment?" + stringify(obj),'_blank');
+  event.preventDefault()
+};
 
-  form = (
-    <form id="internet-bank-content">
+const InternetBank = () =>
+    <form id="internet-bank-content" onSubmit={handleSubmit}>
       <div className="labels">
         <label htmlFor="bank__tax-id">От кого (ИНН)</label>
         <TaxId id="bank__tax-id"/>
@@ -22,8 +30,6 @@ class InternetBank extends StatusForm {
       <button type="submit">
         Получить файл для интернет-банка
       </button>
-    </form>
-  )
-}
+    </form>;
 
 export default InternetBank;

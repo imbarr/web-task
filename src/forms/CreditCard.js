@@ -7,7 +7,7 @@ import "./CreditCard.css"
 import {Mail, Money} from "./Inputs";
 
 class CreditCard extends StatusForm {
-  path = '/credit-card';
+  path = '/payment';
 
   form = (
     <form id="credit-card-content" onSubmit={this.handleSubmit}>

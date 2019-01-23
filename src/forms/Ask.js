@@ -3,7 +3,7 @@ import StatusForm from "./StatusForm";
 import {AccountNumber, BIC, Mail, Money, TaxId, Telephone, VAT} from "./Inputs";
 
 class Ask extends StatusForm {
-  path = '/ask';
+  path = '/request';
 
   form = (
     <form id="ask" className="content-2">
