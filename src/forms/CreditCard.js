@@ -18,7 +18,7 @@ class CreditCard extends StatusForm {
           <img alt="" className="credit-card-logo" src={maestro}/>
           <input required id="card-number" placeholder="Номер карты"
                  pattern="[0-9]{16}" name="cardNumber"/>
-          <input required pattern="([0-9]|0[0-9]|1[0-2])\/[1-9][0-9]"
+          <input required pattern="([0-9]|0[0-9]|1[0-2])\/19|[2-9][0-9]"
                  id="card-expiration" placeholder="ММ/ГГ" name="expirationDate"/>
           <input required pattern="[0-9]{3}"
                  id="card-cvc" placeholder="CVC" name="CVC"/>
@@ -29,7 +29,7 @@ class CreditCard extends StatusForm {
           <label htmlFor="card__money">Сумма</label>
           <Money id="card__money"/>
           <label htmlFor="card__comment">Комментарий</label>
-          <input id="card__comment" pattern=".{0-150}" placeholder="до 150 символов" name="comment"/>
+          <input id="card__comment" pattern=".{0,150}" placeholder="до 150 символов" name="comment"/>
           <label htmlFor="card__mail">Ваша эл.почта</label>
           <Mail id="card__mail" placeholder="для квитанций об оплате"/>
         </div>
